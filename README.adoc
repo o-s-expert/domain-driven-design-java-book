@@ -52,14 +52,16 @@ This chapter explains how to capture and translate domain knowledge into your co
 == How to Use This Repository
 
 1. Clone the repository to your local machine:
-   ```
-   git clone https://github.com/o-s-expert/domain-driven-design-java-book.git
-   ```
+
+```
+git clone https://github.com/o-s-expert/domain-driven-design-java-book.git
+```
 
 2. Navigate to the project folder of the chapter you’re interested in:
-   ```
-   cd chapter-03
-   ```
+
+```
+cd chapter-03
+```
 
 3. Follow the instructions in the chapter to run and explore the project code.
 
