@@ -1,0 +1,68 @@
+= Domain-Driven Design with Java - Sample Code Repository
+:toc:
+:toc-title: Table of Contents
+
+Welcome to the **Domain-Driven Design with Java** repository! This repository contains practical examples and code samples from the book _Domain-Driven Design with Java_. Each project in this repository corresponds to a specific chapter in the book, designed to help you understand how to implement Domain-Driven Design (DDD) principles using Java.
+
+== Why You Need This Repository
+
+As you dive into _Domain-Driven Design with Java_, you'll encounter real-world challenges that DDD can help solve. This repository is a companion to the book, giving you hands-on experience with the concepts discussed. By exploring the projects in this repository, you will:
+
+- Learn how to apply DDD principles like services, entities, value objects, aggregates, and repositories in Java.
+- Explore how DDD integrates with popular architectures like microservices and monoliths.
+- Understand how to use tools like ArchUnit for automated validation.
+- Gain insight into how DDD principles improve scalability, maintainability, and alignment with business goals.
+
+Each folder in this repository corresponds to a specific chapter in the book, beginning with Chapter 3. The projects are organized to provide a step-by-step guide through the various aspects of DDD.
+
+== Chapter Projects
+
+=== link:./chapter-03[Chapter 03: Tactical DDD Implementation]
+
+This chapter focuses on the practical implementation of DDD concepts such as Entities, Value Objects, Services, Aggregates, and Repositories. You’ll find Java code that demonstrates how to structure these components to align with DDD principles.
+
+=== link:./chapter-04[Chapter 04: Testing and Validating DDD Applications]
+
+This chapter teaches you how to test and validate DDD applications. Explore using tools like ArchUnit and JMolecules to maintain architectural integrity and enforce DDD rules through unit and integration tests.
+
+=== link:./chapter-05[Chapter 05: DDD in Microservices, Monoliths, and Distributed Systems]
+
+This chapter delves into applying DDD in different architectural styles, such as microservices and monoliths. You’ll find examples of how to implement DDD in these environments and how to refactor legacy systems to adopt DDD.
+
+=== link:./chapter-06[Chapter 06: Integrating DDD with Clean Architecture]
+
+Learn how to combine DDD principles with Clean Architecture to design scalable, maintainable systems. This folder contains sample code demonstrating how to keep your business logic decoupled from infrastructure concerns.
+
+=== link:./chapter-07[Chapter 07: DDD and Data Modeling]
+
+This chapter covers aligning data modeling with DDD principles to ensure the data structure reflects your business domain. Explore examples of applying DDD to SQL and NoSQL databases while ensuring scalability and performance.
+
+=== link:./chapter-08[Chapter 08: Enterprise Java with Jakarta EE]
+
+Explore how to apply DDD principles using the latest advancements in Jakarta EE. This chapter includes sample applications demonstrating how to leverage Jakarta EE 11 and Jakarta Data to implement domain-centric architectures.
+
+=== link:./chapter-09[Chapter 09: Enterprise Java with Spring]
+
+This chapter demonstrates how to apply DDD principles using the Spring framework. Learn how to integrate Spring components like Spring Data, Spring Boot, and Spring Cloud into your DDD implementation for scalable enterprise applications.
+
+=== link:./chapter-10[Chapter 10: Capturing Domain Knowledge with Domain Storytelling]
+
+This chapter explains how to capture and translate domain knowledge into your code using Domain Storytelling. You’ll find examples of how to facilitate effective collaboration between business and technical teams through storytelling.
+
+== How to Use This Repository
+
+1. Clone the repository to your local machine:
+   ```
+   git clone https://github.com/o-s-expert/domain-driven-design-java-book.git
+   ```
+
+2. Navigate to the project folder of the chapter you’re interested in:
+   ```
+   cd chapter-03
+   ```
+
+3. Follow the instructions in the chapter to run and explore the project code.
+
+== Contributing
+
+If you find any issues or want to contribute improvements, open a pull request or submit an issue.
