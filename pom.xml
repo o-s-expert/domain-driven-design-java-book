@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>expert.os.books</groupId>
+    <artifactId>domain-driven-design-java</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>domain-driven-design-java</name>
+    <url>http://www.os.expert</url>
+    <description>The Domain Driven Design Java samples book</description>
+
+    <modules>
+        <module>chapter-03</module>
+    </modules>
+    
+</project>
