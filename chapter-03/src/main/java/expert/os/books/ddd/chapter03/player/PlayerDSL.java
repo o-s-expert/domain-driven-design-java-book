@@ -3,12 +3,12 @@ package expert.os.books.ddd.chapter03.player;
 import java.time.Year;
 import java.util.Objects;
 
-public class PlayerBuilder implements FluentPlayer,
+public class PlayerDSL implements FluentPlayer,
         FluentPlayer.PlayerEnd, FluentPlayer.PlayerEmail, FluentPlayer.PlayerPosition {
 
     static final Year SOCCER_BORN = Year.of(1863);
 
-    PlayerBuilder(String name) {
+    PlayerDSL(String name) {
         this.name = name;
     }
 

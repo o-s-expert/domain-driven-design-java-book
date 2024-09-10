@@ -68,7 +68,7 @@ public class Player {
     }
 
     public static FluentPlayer name(String name) {
-        return new PlayerBuilder(Objects.requireNonNull(name, "name is required"));
+        return new PlayerDSL(Objects.requireNonNull(name, "name is required"));
     }
 
 
