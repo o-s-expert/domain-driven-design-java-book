@@ -1,6 +1,7 @@
 package expert.os.books.ddd.chapter03.player;
 
 import java.time.Year;
+import java.util.Objects;
 
 public class PlayerBuilder {
 
@@ -48,6 +49,9 @@ public class PlayerBuilder {
     }
 
     public Player build() {
+        Objects.requireNonNull(name, "Name is required");
+        Objects.requireNonNull(start, "Start is required");
+        Objects.requireNonNull(position, "Position is required");
         return new Player(name, start, end, email, position);
     }
 }

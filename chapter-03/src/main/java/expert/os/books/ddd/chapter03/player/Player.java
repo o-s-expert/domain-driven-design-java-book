@@ -71,5 +71,9 @@ public class Player {
         return new PlayerDSL(Objects.requireNonNull(name, "name is required"));
     }
 
+    public static PlayerBuilder builder() {
+        return new PlayerBuilder();
+    }
+
 
 }
