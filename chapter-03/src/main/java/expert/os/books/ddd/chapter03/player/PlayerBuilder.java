@@ -24,16 +24,19 @@ public class PlayerBuilder {
     }
 
     public PlayerBuilder start(Year start) {
+        //validation
         this.start = start;
         return this;
     }
 
     public PlayerBuilder end(Year end) {
+        //validation
         this.end = end;
         return this;
     }
 
     public PlayerBuilder email(String email) {
+        //validation
         this.email = email;
         return this;
     }

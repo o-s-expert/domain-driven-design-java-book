@@ -15,7 +15,8 @@ class PlayerTest {
         Player player = Player.name("Ronaldo")
                 .start(Year.of(2003))
                 .end(Year.of(2020))
-                .position(Position.FORWARD).email("ronaldo@bahia.com");
+                .position(Position.FORWARD)
+                .email("ronaldo@bahia.com");
 
         SoftAssertions.assertSoftly(softly -> {
             softly.assertThat(player.getName()).isEqualTo("Ronaldo");

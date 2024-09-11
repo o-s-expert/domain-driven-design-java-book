@@ -6,8 +6,6 @@ import java.util.Optional;
 
 public class Player {
 
-    static final Year SOCCER_BORN = Year.of(1863);
-
     private String name;
 
     private Year start;
