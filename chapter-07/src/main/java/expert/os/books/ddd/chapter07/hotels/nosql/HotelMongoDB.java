@@ -1,7 +1,6 @@
 package expert.os.books.ddd.chapter07.hotels.nosql;
 
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.UpdateOptions;
 import com.mongodb.client.model.Updates;
 import expert.os.books.ddd.chapter07.hotels.Hotel;
@@ -51,7 +50,7 @@ public class HotelMongoDB implements Hotel {
 
     @Override
     public Optional<Room> findEmptyRoom() {
-        RoomNoSQL emptyRoom = roomCollection.find(Filters.eq("guest", null)).first();
+        RoomNoSQL emptyRoom = roomCollection.find(eq("guest", null)).first();
         return Optional.ofNullable(emptyRoom).map(mapper::toDomain);
     }
 }

@@ -11,7 +11,7 @@ public class RoomNoSQL {
     private GuestNoSQL guest;
 
     RoomNoSQL(Long room, GuestNoSQL guestNoSQL) {
-        this.number = Long.valueOf(room);
+        this.number = room;
         this.guest = guestNoSQL;
     }
 

@@ -21,7 +21,7 @@ class RoomJPA {
     private GuestJPA guest;
 
     RoomJPA(Long room, GuestJPA guestJPA) {
-        this.number = Long.valueOf(room);
+        this.number = room;
         this.guest = guestJPA;
     }
 
