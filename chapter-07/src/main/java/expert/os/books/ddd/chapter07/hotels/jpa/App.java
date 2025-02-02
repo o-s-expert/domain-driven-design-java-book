@@ -4,7 +4,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-public class App {
+public final class App {
 
     public static void main(String[] args) {
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder().build();
@@ -21,5 +21,8 @@ public class App {
             // had trouble building the SessionFactory so destroy it manually.
             StandardServiceRegistryBuilder.destroy(registry);
         }
+    }
+
+    private App() {
     }
 }
