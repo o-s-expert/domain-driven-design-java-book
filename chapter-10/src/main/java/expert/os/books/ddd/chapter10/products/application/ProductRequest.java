@@ -1,5 +1,9 @@
-package expert.os.books.ddd.chapter10.products.domain;
+package expert.os.books.ddd.chapter10.products.application;
 
+import expert.os.books.ddd.chapter10.products.domain.Category;
+import expert.os.books.ddd.chapter10.products.domain.Manufacturer;
+import expert.os.books.ddd.chapter10.products.infra.FieldVisibilityStrategy;
+import jakarta.json.bind.annotation.JsonbVisibility;
 import jakarta.nosql.Column;
 import jakarta.nosql.Convert;
 import jakarta.nosql.Entity;
@@ -11,7 +15,8 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-public class Product {
+@JsonbVisibility(FieldVisibilityStrategy.class)
+public class ProductRequest {
 
     @Id
     @Convert(ObjectIdConverter.class)
@@ -34,7 +39,7 @@ public class Product {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Product product = (Product) o;
+        ProductRequest product = (ProductRequest) o;
         return Objects.equals(id, product.id);
     }
 
