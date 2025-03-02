@@ -1,7 +1,6 @@
 package expert.os.books.ddd.chapter10.products.application;
 
 import expert.os.books.ddd.chapter10.products.domain.Product;
-import expert.os.books.ddd.chapter10.products.domain.ProductRepository;
 import jakarta.data.Order;
 import jakarta.data.Sort;
 import jakarta.data.page.PageRequest;
@@ -16,23 +15,30 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response;
+import org.eclipse.microprofile.openapi.annotations.Operation;
+import org.eclipse.microprofile.openapi.annotations.media.Content;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
+import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import java.util.List;
 import java.util.logging.Logger;
 
 @ApplicationScoped
 @Path("/products")
+@Tag(name = "Products", description = "Operations related to product management")
 public class ProductResource {
 
     private static final Order<Product> ORDER = Order.by(Sort.asc("name"));
 
     private static final Logger LOGGER = Logger.getLogger(ProductResource.class.getName());
 
-    private final ProductRepository repository;
+    private final ProductService service;
 
     @Inject
-    public ProductResource(ProductRepository repository) {
-        this.repository = repository;
+    public ProductResource(ProductService service) {
+        this.service = service;
     }
 
     @Deprecated
@@ -41,30 +47,63 @@ public class ProductResource {
     }
 
     @GET
-    public List<Product> get(
+    @Operation(summary = "Retrieve a paginated list of products",
+            description = "Fetches products based on page number and size")
+    @APIResponse(responseCode = "200",
+            description = "Successfully retrieved list of products",
+            content = @Content(schema = @Schema(implementation = ProductResponse.class)))
+    public List<ProductResponse> get(
+            @Parameter(description = "Page number", example = "1")
             @QueryParam("page") @DefaultValue("1") int page,
+
+            @Parameter(description = "Size of the page", example = "10")
             @QueryParam("size") @DefaultValue("10") int size) {
+
         LOGGER.info("The page number is: " + page + " and the size is: " + size);
         var request = PageRequest.ofPage(page).size(size);
-        return repository.findAll(request, ORDER).content();
+        return service.findAll(request, ORDER);
     }
 
     @POST
-    public Product insert(Product product) {
+    @Operation(summary = "Create a new product",
+            description = "Inserts a new product into the system")
+    @APIResponse(responseCode = "201",
+            description = "Product created successfully",
+            content = @Content(schema = @Schema(implementation = ProductResponse.class)))
+    public ProductResponse insert(
+            @Parameter(description = "Product details to be saved", required = true)
+            ProductRequest product) {
+
         LOGGER.info("The product will be saved: " + product);
-        return repository.save(product);
+        return service.save(product);
     }
 
     @DELETE
     @Path("{id}")
-    public void delete(@PathParam("id") String id) {
-        repository.deleteById(id);
+    @Operation(summary = "Delete a product by ID",
+            description = "Removes a product from the system based on its ID")
+    @APIResponse(responseCode = "204", description = "Product deleted successfully")
+    @APIResponse(responseCode = "404", description = "Product not found")
+    public void delete(
+            @Parameter(description = "Product ID to be deleted", required = true, example = "12345")
+            @PathParam("id") String id) {
+
+        service.deleteById(id);
     }
 
     @GET
     @Path("{id}")
-    public Product findById(@PathParam("id") String id) {
-        return repository.findById(id)
+    @Operation(summary = "Find a product by ID",
+            description = "Fetches details of a specific product using its ID")
+    @APIResponse(responseCode = "200",
+            description = "Product retrieved successfully",
+            content = @Content(schema = @Schema(implementation = ProductResponse.class)))
+    @APIResponse(responseCode = "404", description = "Product not found")
+    public ProductResponse findById(
+            @Parameter(description = "Product ID to search for", required = true, example = "12345")
+            @PathParam("id") String id) {
+
+        return service.findById(id)
                 .orElseThrow(() -> new WebApplicationException("Product not found, with id: " + id, Response.Status.NOT_FOUND));
     }
 }
