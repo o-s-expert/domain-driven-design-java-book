@@ -1,5 +1,5 @@
 
-package expert.os.books.ddd.chapter10.hotels;
+package expert.os.books.ddd.chapter10.products;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.client.WebTarget;

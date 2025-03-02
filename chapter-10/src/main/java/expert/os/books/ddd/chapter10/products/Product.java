@@ -1,16 +1,19 @@
-package expert.os.books.ddd.chapter10.hotels;
+package expert.os.books.ddd.chapter10.products;
 
+import jakarta.json.bind.annotation.JsonbVisibility;
 import jakarta.nosql.Column;
 import jakarta.nosql.Convert;
 import jakarta.nosql.Entity;
 import jakarta.nosql.Id;
 import org.eclipse.jnosql.databases.mongodb.mapping.ObjectIdConverter;
+import org.soujava.samples.mongodb.products.infra.FieldVisibilityStrategy;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
+@JsonbVisibility(FieldVisibilityStrategy.class)
 public class Product {
 
     @Id
@@ -28,36 +31,6 @@ public class Product {
 
     @Column
     private Set<Category> categories;
-
-    Product(String name, Manufacturer manufacturer, List<String> tags, Set<Category> categories) {
-        this.name = name;
-        this.manufacturer = manufacturer;
-        this.tags = tags;
-        this.categories = categories;
-    }
-
-    Product() {
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Manufacturer getManufacturer() {
-        return manufacturer;
-    }
-
-    public List<String> getTags() {
-        return tags;
-    }
-
-    public Set<Category> getCategories() {
-        return categories;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -82,9 +55,5 @@ public class Product {
                 ", tags=" + tags +
                 ", categories=" + categories +
                 '}';
-    }
-
-    public static ProductBuilder builder() {
-        return new ProductBuilder();
     }
 }

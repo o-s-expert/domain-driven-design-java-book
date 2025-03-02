@@ -1,4 +1,4 @@
-package expert.os.books.ddd.chapter10.hotels;
+package expert.os.books.ddd.chapter10.products;
 
 import jakarta.nosql.Column;
 import jakarta.nosql.Embeddable;
