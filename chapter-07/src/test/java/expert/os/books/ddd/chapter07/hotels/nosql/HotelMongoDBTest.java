@@ -30,6 +30,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
 import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
+@Disabled("This test is disabled because it requires a running MongoDB instance")
 class HotelMongoDBTest {
 
     private static TransitionWalker.ReachedState<RunningMongodProcess> runningMongod;
