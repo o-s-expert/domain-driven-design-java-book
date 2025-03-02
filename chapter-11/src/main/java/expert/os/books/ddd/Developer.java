@@ -10,14 +10,14 @@ import jakarta.persistence.Entity;
 public class Developer extends PanacheEntity {
 
     @Column
-    private String name;
+    public String name;
 
     @Column
-    private String email;
+    public String email;
 
     @Column
-    private String language;
+    public String language;
     @Column
-    private String city;
+    public String city;
 }
 
