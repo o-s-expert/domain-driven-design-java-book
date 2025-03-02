@@ -6,6 +6,7 @@ import expert.os.books.ddd.chapter10.products.domain.ProductRepository;
 import jakarta.data.Order;
 import jakarta.data.page.PageRequest;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,6 +26,7 @@ public class ProductService {
         this(null, null);
     }
 
+    @Inject
     public ProductService(ProductRepository repository, ProductMapper mapper) {
         this.repository = repository;
         this.mapper = mapper;
@@ -34,8 +36,11 @@ public class ProductService {
     public List<ProductResponse> findAll(PageRequest request, Order<Product> order) {
         LOGGER.info("Finding all products in the page request: " + request);
         var products = repository.findAll(request, order).content();
+        LOGGER.info("Found " + products.size() + " products in the page request: " + request);
+        LOGGER.info("Found: " + products);
         List<ProductResponse> responses = products.stream().map(mapper::toDTO).map(ProductResponse::of).toList();
         LOGGER.info("Found " + responses.size() + " products");
+        LOGGER.info("responses: " + responses);
         return responses;
     }
 

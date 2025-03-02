@@ -27,6 +27,46 @@ public class ProductDTO {
     @Schema(description = "Categories the product belongs to.")
     private Set<CategoryDTO> categories;
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ManufacturerDTO getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(ManufacturerDTO manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
+    public Set<CategoryDTO> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Set<CategoryDTO> categories) {
+        this.categories = categories;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) {

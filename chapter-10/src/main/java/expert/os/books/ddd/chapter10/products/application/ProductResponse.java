@@ -12,6 +12,13 @@ public class ProductResponse {
   private ProductDTO product;
 
 
+  @Override
+  public String toString() {
+    return "ProductResponse{" +
+            "product=" + product +
+            '}';
+  }
+
   public static ProductResponse of(ProductDTO product) {
     var response = new ProductResponse();
     response.product = product;
