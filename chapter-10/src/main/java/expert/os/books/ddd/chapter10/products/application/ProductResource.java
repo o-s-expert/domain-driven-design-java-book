@@ -1,5 +1,7 @@
-package expert.os.books.ddd.chapter10.products.domain;
+package expert.os.books.ddd.chapter10.products.application;
 
+import expert.os.books.ddd.chapter10.products.domain.Product;
+import expert.os.books.ddd.chapter10.products.domain.ProductRepository;
 import jakarta.data.Order;
 import jakarta.data.Sort;
 import jakarta.data.page.PageRequest;
