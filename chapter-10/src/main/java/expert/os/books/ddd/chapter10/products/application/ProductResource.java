@@ -51,8 +51,8 @@ public class ProductResource {
             description = "Fetches products based on page number and size")
     @APIResponse(responseCode = "200",
             description = "Successfully retrieved list of products",
-            content = @Content(schema = @Schema(implementation = ProductResponse.class)))
-    public List<ProductResponse> get(
+            content = @Content(schema = @Schema(implementation = ProductDTO.class)))
+    public List<ProductDTO> get(
             @Parameter(description = "Page number", example = "1")
             @QueryParam("page") @DefaultValue("1") int page,
 
@@ -69,10 +69,10 @@ public class ProductResource {
             description = "Inserts a new product into the system")
     @APIResponse(responseCode = "201",
             description = "Product created successfully",
-            content = @Content(schema = @Schema(implementation = ProductResponse.class)))
-    public ProductResponse insert(
+            content = @Content(schema = @Schema(implementation = ProductDTO.class)))
+    public ProductDTO insert(
             @Parameter(description = "Product details to be saved", required = true)
-            ProductRequest product) {
+            ProductDTO product) {
 
         LOGGER.info("The product will be saved: " + product);
         return service.save(product);
@@ -97,9 +97,9 @@ public class ProductResource {
             description = "Fetches details of a specific product using its ID")
     @APIResponse(responseCode = "200",
             description = "Product retrieved successfully",
-            content = @Content(schema = @Schema(implementation = ProductResponse.class)))
+            content = @Content(schema = @Schema(implementation = ProductDTO.class)))
     @APIResponse(responseCode = "404", description = "Product not found")
-    public ProductResponse findById(
+    public ProductDTO findById(
             @Parameter(description = "Product ID to search for", required = true, example = "12345")
             @PathParam("id") String id) {
 

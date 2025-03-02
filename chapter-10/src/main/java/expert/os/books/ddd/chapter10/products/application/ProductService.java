@@ -33,22 +33,21 @@ public class ProductService {
     }
 
 
-    public List<ProductResponse> findAll(PageRequest request, Order<Product> order) {
+    public List<ProductDTO> findAll(PageRequest request, Order<Product> order) {
         LOGGER.info("Finding all products in the page request: " + request);
         var products = repository.findAll(request, order).content();
         LOGGER.info("Found " + products.size() + " products in the page request: " + request);
         LOGGER.info("Found: " + products);
-        List<ProductResponse> responses = products.stream().map(mapper::toDTO).map(ProductResponse::of).toList();
+        List<ProductDTO> responses = products.stream().map(mapper::toDTO).toList();
         LOGGER.info("Found " + responses.size() + " products");
         LOGGER.info("responses: " + responses);
         return responses;
     }
 
-    public ProductResponse save(ProductRequest request) {
-        ProductDTO product = request.getProduct();
+    public ProductDTO save(ProductDTO product) {
         LOGGER.fine(() -> "Saving product: " + product);
         var entity = repository.save(mapper.toEntity(product));
-        return ProductResponse.of(mapper.toDTO(entity));
+        return mapper.toDTO(entity);
     }
 
     public void deleteById(String id) {
@@ -56,8 +55,8 @@ public class ProductService {
         repository.deleteById(id);
     }
 
-    public Optional<ProductResponse> findById(String id) {
+    public Optional<ProductDTO> findById(String id) {
         LOGGER.info("Finding product with id: " + id);
-        return repository.findById(id).map(mapper::toDTO).map(ProductResponse::of);
+        return repository.findById(id).map(mapper::toDTO);
     }
 }
