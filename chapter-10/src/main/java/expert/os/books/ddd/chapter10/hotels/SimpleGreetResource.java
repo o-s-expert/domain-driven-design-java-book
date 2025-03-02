@@ -1,5 +1,5 @@
 
-package expert.os.books.ddd.chapter08.hotels;
+package expert.os.books.ddd.chapter10.hotels;
 
 import org.eclipse.microprofile.metrics.MetricUnits;
 import org.eclipse.microprofile.metrics.annotation.Counted;

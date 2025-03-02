@@ -1,4 +1,4 @@
-package expert.os.books.ddd.chapter08.hotels;
+package expert.os.books.ddd.chapter10.hotels;
 
 import jakarta.data.page.PageRequest;
 import jakarta.enterprise.context.ApplicationScoped;
