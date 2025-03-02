@@ -10,4 +10,8 @@ public class ProductRequest {
 
     @Schema(description = "Product details for the request.")
     private ProductDTO product;
+
+    public ProductDTO getProduct() {
+        return product;
+    }
 }

@@ -10,4 +10,11 @@ public class ProductResponse {
 
   @Schema(description = "Product details included in the response.")
   private ProductDTO product;
+
+
+  public static ProductResponse of(ProductDTO product) {
+    var response = new ProductResponse();
+    response.product = product;
+    return response;
+  }
 }
