@@ -1,4 +1,4 @@
-package expert.os.books.ddd.chapter10;
+package expert.os.books.ddd.chapter13;
 
 import org.jmolecules.ddd.annotation.Service;
 
