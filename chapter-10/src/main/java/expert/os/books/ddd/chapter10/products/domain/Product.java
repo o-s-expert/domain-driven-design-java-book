@@ -1,4 +1,4 @@
-package expert.os.books.ddd.chapter10.products;
+package expert.os.books.ddd.chapter10.products.domain;
 
 import jakarta.json.bind.annotation.JsonbVisibility;
 import jakarta.nosql.Column;
