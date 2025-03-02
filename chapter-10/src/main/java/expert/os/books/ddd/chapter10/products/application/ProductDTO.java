@@ -8,18 +8,23 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-@Schema
+@Schema(description = "Represents a product.")
 @JsonbVisibility(FieldVisibilityStrategy.class)
 public class ProductDTO {
 
+    @Schema(description = "Unique identifier for the product.")
     private String id;
 
+    @Schema(description = "Name of the product.")
     private String name;
 
+    @Schema(description = "Manufacturer details of the product.")
     private ManufacturerDTO manufacturer;
 
+    @Schema(description = "Tags associated with the product.")
     private List<String> tags;
 
+    @Schema(description = "Categories the product belongs to.")
     private Set<CategoryDTO> categories;
 
     @Override

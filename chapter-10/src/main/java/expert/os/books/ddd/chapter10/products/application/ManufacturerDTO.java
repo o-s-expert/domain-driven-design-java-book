@@ -2,16 +2,22 @@ package expert.os.books.ddd.chapter10.products.application;
 
 import expert.os.books.ddd.chapter10.products.infra.FieldVisibilityStrategy;
 import jakarta.json.bind.annotation.JsonbVisibility;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import java.util.Objects;
 
+
+@Schema(description = "Represents the manufacturer of a product.")
 @JsonbVisibility(FieldVisibilityStrategy.class)
 public class ManufacturerDTO {
 
+    @Schema(description = "Name of the manufacturer.")
     private String name;
 
+    @Schema(description = "Address of the manufacturer.")
     private String address;
 
+    @Schema(description = "Contact number of the manufacturer.")
     private String contactNumber;
 
 
