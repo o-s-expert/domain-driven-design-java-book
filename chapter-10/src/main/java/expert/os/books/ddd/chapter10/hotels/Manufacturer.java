@@ -2,8 +2,10 @@ package expert.os.books.ddd.chapter10.hotels;
 
 import jakarta.nosql.Column;
 import jakarta.nosql.Embeddable;
-import jakarta.nosql.Entity;
+
 
 @Embeddable(Embeddable.EmbeddableType.GROUPING)
-public record Guest (@Column String documentNumber, @Column String name) {
+//@Embeddable(Embeddable.EmbeddableType.FLAT)
+public record Manufacturer(@Column String name, @Column String address, @Column String contactNumber) {
+
 }
