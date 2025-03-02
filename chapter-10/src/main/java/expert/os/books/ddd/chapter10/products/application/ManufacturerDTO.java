@@ -2,11 +2,17 @@ package expert.os.books.ddd.chapter10.products.application;
 
 import expert.os.books.ddd.chapter10.products.infra.FieldVisibilityStrategy;
 import jakarta.json.bind.annotation.JsonbVisibility;
-import org.eclipse.microprofile.openapi.annotations.media.Schema;
+import jakarta.nosql.Column;
 
-@Schema
 @JsonbVisibility(FieldVisibilityStrategy.class)
-public class ProductRequest {
+public class ManufacturerDTO {
 
-  private ProductDTO product;
+    private String name;
+
+    private String address;
+
+    private String contactNumber;
+
+
+
 }

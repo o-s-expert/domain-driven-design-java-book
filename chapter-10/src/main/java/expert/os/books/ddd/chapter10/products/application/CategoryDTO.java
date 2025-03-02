@@ -1,12 +1,13 @@
 package expert.os.books.ddd.chapter10.products.application;
 
+
 import expert.os.books.ddd.chapter10.products.infra.FieldVisibilityStrategy;
 import jakarta.json.bind.annotation.JsonbVisibility;
-import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
-@Schema
 @JsonbVisibility(FieldVisibilityStrategy.class)
-public class ProductRequest {
+public class CategoryDTO {
 
-  private ProductDTO product;
+    private String name;
+
+    private String description;
 }
