@@ -37,9 +37,7 @@ public class ProductService {
         LOGGER.info("Finding all products in the page request: " + request);
         var products = repository.findAll(request, order).content();
         LOGGER.info("Found " + products.size() + " products in the page request: " + request);
-        LOGGER.info("Found: " + products);
         List<ProductDTO> responses = products.stream().map(mapper::toDTO).toList();
-        LOGGER.info("Found " + responses.size() + " products");
         LOGGER.info("responses: " + responses);
         return responses;
     }
