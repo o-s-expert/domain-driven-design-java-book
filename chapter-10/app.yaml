@@ -1,0 +1,37 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: hotel-reservation
+  labels:
+    app: hotel-reservation
+spec:
+  type: ClusterIP
+  selector:
+    app: hotel-reservation
+  ports:
+    - name: tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: hotel-reservation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hotel-reservation
+  template:
+    metadata:
+      labels:
+        app: hotel-reservation
+        version: v1
+    spec:
+      containers:
+      - name: hotel-reservation
+        image: hotel-reservation
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
