@@ -32,11 +32,11 @@ public class ProgrammerResource {
     @Path("{id}")
     @Produces("application/json")
     public Programmer get(@PathParam("id") Long id){
-        Programmer person = repository.findById(id);
-        if (person == null) {
+        Programmer programmer = repository.findById(id);
+        if (programmer == null) {
             throw new WebApplicationException(404);
         }
-        return person;
+        return programmer;
     }
 
     @GET

@@ -24,41 +24,39 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 public class SoftwareEngineerResource {
 
-    @Inject
-    ProgrammerRepository repository;
 
 
     @GET
     @Path("{id}")
     @Produces("application/json")
-    public Programmer get(@PathParam("id") Long id){
-        Programmer person = repository.findById(id);
-        if (person == null) {
+    public SoftwareEngineer get(@PathParam("id") Long id){
+        SoftwareEngineer softwareEngineer = SoftwareEngineer.findById(id);
+        if (softwareEngineer == null) {
             throw new WebApplicationException(404);
         }
-        return person;
+        return softwareEngineer;
     }
 
     @GET
     @Produces("application/json")
     public Response list() {
-        List<Programmer> people = repository.listAll(Sort.by("name"));
-        return Response.ok(people).build();
+        List<SoftwareEngineer> softwareEngineers = SoftwareEngineer.listAll(Sort.by("name"));
+        return Response.ok(softwareEngineers).build();
     }
 
     @GET
     @Path("/count")
     public long count() {
-        return repository.count();
+        return SoftwareEngineer.count();
     }
 
     @Transactional
     @POST
     @Consumes("application/json")
     @Produces("application/json")
-    public Response add(Programmer programmer) {
-        repository.persist(programmer);
-        return Response.ok(programmer).build();
+    public Response add(SoftwareEngineer softwareEngineer) {
+        SoftwareEngineer.persist(softwareEngineer);
+        return Response.ok(softwareEngineer).build();
     }
 
     @Transactional
@@ -66,12 +64,12 @@ public class SoftwareEngineerResource {
     @Path("{id}")
     @Consumes("application/json")
     @Produces("application/json")
-    public Response update(@PathParam("id") Long id, Programmer programmer) {
-        if (repository.findById(id) == null) {
-            repository.persist(programmer);
+    public Response update(@PathParam("id") Long id, SoftwareEngineer softwareEngineer) {
+        if (SoftwareEngineer.findById(id) == null) {
+            SoftwareEngineer.persist(softwareEngineer);
             return Response.status(204).build();
         }
-        repository.persist(programmer);
+        SoftwareEngineer.persist(softwareEngineer);
         return Response.status(201).build();
     }
 
@@ -79,7 +77,7 @@ public class SoftwareEngineerResource {
     @DELETE
     @Path("{id}")
     public void delete(@PathParam("id") Long id) {
-        if (!repository.deleteById(id)) {
+        if (!SoftwareEngineer.deleteById(id)) {
             throw new WebApplicationException(404);
         }
     }
