@@ -10,7 +10,7 @@
         <relativePath/>
     </parent>
      <groupId>expert.os.books.ddd</groupId>
-    <artifactId>chapter-08</artifactId>
+    <artifactId>chapter-10</artifactId>
     <version>1.0.0</version>
 
     <properties>
