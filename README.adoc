@@ -45,6 +45,14 @@ Explore how to apply DDD principles using the latest advancements in Jakarta EE.
 
 This chapter demonstrates how to apply DDD principles using the Spring framework. Learn how to integrate Spring components like Spring Data, Spring Boot, and Spring Cloud into your DDD implementation for scalable enterprise applications.
 
+=== link:./chapter-10[Chapter 10: Eclipse MicroProfile and Domain-Driven Design]
+
+This chapter explores how **Eclipse MicroProfile** enhances Domain-Driven Design (DDD) in cloud-native and microservices-based Java applications. It provides a practical guide to integrating MicroProfile’s capabilities—such as configuration management, fault tolerance, health checks, and metrics—while keeping the domain model at the center of your architecture.
+
+=== link:./chapter-11[Chapter 11: Quarkus and Domain-Driven Design]
+
+Quarkus is reshaping enterprise Java with its fast startup times and efficient resource usage. This chapter demonstrates how **Quarkus** helps developers implement Domain-Driven Design (DDD) while maintaining high performance and cloud-native capabilities. You’ll learn how to optimize persistence, use reactive programming for domain events, and deploy Quarkus-based microservices.
+
 === link:./chapter-13[Chapter 13: Capturing Domain Knowledge with Domain Storytelling]
 
 This chapter explains how to capture and translate domain knowledge into your code using Domain Storytelling. You’ll find examples of how to facilitate effective collaboration between business and technical teams through storytelling.
