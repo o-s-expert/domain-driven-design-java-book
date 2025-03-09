@@ -45,7 +45,7 @@ Explore how to apply DDD principles using the latest advancements in Jakarta EE.
 
 This chapter demonstrates how to apply DDD principles using the Spring framework. Learn how to integrate Spring components like Spring Data, Spring Boot, and Spring Cloud into your DDD implementation for scalable enterprise applications.
 
-=== link:./chapter-10[Chapter 10: Capturing Domain Knowledge with Domain Storytelling]
+=== link:./chapter-13[Chapter 13: Capturing Domain Knowledge with Domain Storytelling]
 
 This chapter explains how to capture and translate domain knowledge into your code using Domain Storytelling. You’ll find examples of how to facilitate effective collaboration between business and technical teams through storytelling.
 
